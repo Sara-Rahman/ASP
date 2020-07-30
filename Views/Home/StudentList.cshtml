@@ -1,0 +1,51 @@
+﻿@model List<School_Acoount_Management_System.ViewModel.StudentInfoVM>
+@{
+    ViewData["Title"] = "StudentList";
+}
+
+<h1 class="text-center">StudentList</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Serial</th>
+         
+            <th>Student Name</th>
+            <th>Class</th>
+            <th>Section</th>
+            <th>District Name</th>
+            <th>Action</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach(var item in Model)
+        {
+            <tr>
+
+                <td>@item.Serial</td>
+                <td>@item.StudentName</td>
+                <td>@item.Class</td>
+                <td>@item.Section</td>
+                <td>@item.DistrictName</td>
+
+                <td>
+
+<a class="btn btn-success" asp-action="UpdateStudent" asp-controller="Home" asp-route-id="@item.StudentId">Update</a>
+<a class="btn btn-secondary" asp-action="DeleteStudent" asp-controller="Home" asp-route-id="@item.StudentId">Delete</a>
+<a class="btn btn-primary" asp-action="StudentDetails" asp-controller="Home" asp-route-id="@item.StudentId">Details</a>
+
+
+                </td>
+
+
+            </tr>
+        }
+
+    </tbody>
+
+
+
+
+</table>

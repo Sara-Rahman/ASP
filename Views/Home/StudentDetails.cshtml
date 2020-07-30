@@ -1,0 +1,16 @@
+﻿@model School_Acoount_Management_System.ViewModel.StudentInfoVM
+@{
+    ViewData["Title"] = "StudentDetails";
+}
+
+<h1>Student Details</h1>
+
+<div class="col-md-4">
+    Student Name:@Model.StudentName <br />
+    Student Class:@Model.Class <br />
+    Student Section:@Model.Section <br />
+    Student District:@Model.DistrictName <br />
+
+<a class="btn btn-success" asp-action="UpdateStudent" asp-controller="Home" asp-route-id="@Model.StudentId">Update</a>
+
+</div> <a class="btn btn-primary" asp-action="StudentList" asp-controller="Home"> Go Back To List</a>

@@ -1,0 +1,38 @@
+﻿@model School_Acoount_Management_System.ViewModel.StudentInfoVM
+@{
+    ViewData["Title"] = "UpdateStudent";
+}
+
+<h1 class="text-center">Update Student</h1>
+
+<form asp-action="UpdateStudent" asp-controller="Home" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="StudentName"></label>
+        <input asp-for="StudentName" class="from-control" />
+        <span asp-validation-for="StudentName" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Class"></label>
+        <input asp-for="Class" class="from-control" />
+        <span asp-validation-for="Class" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Section"></label>
+        <input asp-for="Section" class="from-control" />
+        <span asp-validation-for="Section" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DistrictInfoId"></label>
+        <select asp-for="DistrictInfoId" class="form-control" asp-items="@ViewBag.DistrictList">
+            <option>Please Select District</option>
+        </select>
+        <span asp-validation-for="DistrictInfoId" class="text-danger"></span><br />
+
+
+    </div>
+    <input type="hidden" asp-for="StudentId" />
+    <input type="submit" class="btn btn-success" value="Update Student" />
+</form>
